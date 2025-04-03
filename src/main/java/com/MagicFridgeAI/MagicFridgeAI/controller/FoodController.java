@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/food")
+@CrossOrigin(origins = "*")
 public class FoodController {
 
 
@@ -59,6 +60,6 @@ public class FoodController {
     @DeleteMapping("delete/{id}")
     public ResponseEntity<String> deleteFood(@PathVariable Long id){
         foodService.deleteById(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Usuario com o id: " + "'" + id +"'" + " deletado com sucesso.");
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Alimento com o id: " + "'" + id +"'" + " deletado com sucesso.");
     }
 }
